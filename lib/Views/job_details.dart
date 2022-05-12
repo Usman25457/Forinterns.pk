@@ -15,6 +15,12 @@ class Jobdetails extends StatelessWidget {
           children: const [
             Text(
                 "Mobile App Developer\n i3RL Private Limited\n Lahore, Pakistan"),
+            Text("this is the new text"),
+            Text("this is the new text"),
+            Text("this is text"),
+
+
+
           ],
         ),
       ),
