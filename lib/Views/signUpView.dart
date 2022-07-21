@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:interns/Theme/app_Colors.dart';
+import 'package:interns/Views/signInView.dart';
 
 class signUpView extends StatefulWidget {
   const signUpView({Key? key}) : super(key: key);
@@ -12,40 +14,24 @@ class _signUpViewState extends State<signUpView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(children: [
-        SizedBox(
-          height: 50,
+        const SizedBox(
+          height: 60,
         ),
-        Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const Text(
-                '',
-                style: TextStyle(fontSize: 24),
-              ),
-              const Padding(
-                padding: EdgeInsets.only(left: 30),
-                child: Text(
-                  'Sign Up',
-                  style: TextStyle(fontSize: 24),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 10),
-                child: IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.cancel_outlined,
-                      size: 30,
-                    )),
-              ),
-            ]),
+        const Padding(
+          padding: EdgeInsets.only(left: 30),
+          child: Text(
+            'Sign Up',
+            style: TextStyle(fontSize: 24),
+          ),
+        ),
         const Padding(
           padding: EdgeInsets.only(top: 20),
-          child: Text('Please create an account to continue',
-          style: TextStyle(
-            fontSize: 16,
-          ),),
+          child: Text(
+            'Please create an account to continue',
+            style: TextStyle(
+              fontSize: 16,
+            ),
+          ),
         ),
         const SizedBox(
           height: 20,
@@ -112,7 +98,7 @@ class _signUpViewState extends State<signUpView> {
                 labelStyle: TextStyle(color: Colors.black54, fontSize: 18)),
           ),
         ),
-        SizedBox(height:30),
+        const SizedBox(height: 30),
         SizedBox(
           height: 55,
           width: 350,
@@ -126,6 +112,8 @@ class _signUpViewState extends State<signUpView> {
               ),
             ),
             style: ButtonStyle(
+                backgroundColor:
+                    MaterialStateProperty.all(appcolors.greenishText),
                 shape: MaterialStateProperty.all(RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30),
                 ))),
@@ -152,13 +140,14 @@ class _signUpViewState extends State<signUpView> {
                   child: const Text(
                     'Sign in',
                     style: TextStyle(
-                      color: Colors.lightBlue,
+                      color: appcolors.greenishText,
                       fontWeight: FontWeight.w600,
                       fontSize: 18,
                     ),
                   ),
-                  onTap: (){
-                    // Navigator.push(context, MaterialPageRoute(builder:(context)=>signInView()));
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => signInView()));
                   },
                 ),
               ],

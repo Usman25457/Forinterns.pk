@@ -5,7 +5,6 @@ class appcolors {
 
   static const Color transparent = Color(0xFF00000000);
 
-
   static const Color Primarycolor = Color(0xFF224289);
   static const Color DarkPrimarycolor = Color(0xFF152b79);
   static const Color lightPrimarycolor = Color(0xFF1454f2);

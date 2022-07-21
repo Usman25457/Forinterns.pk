@@ -13,7 +13,11 @@ class _AccountSettingsState extends State<AccountSettings> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(Icons.west_outlined),
+        backgroundColor: appcolors.greenishText,
+        leading: GestureDetector(child: const Icon(Icons.west_outlined),
+        onTap: (){
+          Navigator.of(context).pop();
+        },),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
@@ -31,21 +35,24 @@ class _AccountSettingsState extends State<AccountSettings> {
        child: Row(
          mainAxisAlignment: MainAxisAlignment.spaceBetween,
          children: [
-         Text("Change Password",style: TextStyle(color: Colors.black.withOpacity(0.6)),),
-         GestureDetector(onTap: (){
-           Navigator.push(
-               context,
-               MaterialPageRoute(
-                   builder: (context) => const ResetPassword()));
-         },child: const Icon(Icons.arrow_forward_ios,color: appcolors.greenishText,)),
+         GestureDetector(
+             onTap: (){
+               Navigator.push(
+                   context,
+                   MaterialPageRoute(
+                       builder: (context) => const ResetPassword()));
+             },
+             child:  const Text("Change Password",style: TextStyle(color: Colors.black,
+             fontSize: 16),)),
+         const Icon(Icons.arrow_forward_ios,color: appcolors.greenishText,),
        ],),
      ),
      const SizedBox(height: 18,),
      Container(
-       width: 360,
-       height: 1.5,
+       width: double.infinity,
+       height: 2,
        color: Colors.grey.withOpacity(0.5),
-     ), ],),
+     ), ],)
 
     );
   }

@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:interns/Theme/app_Colors.dart';
+import 'package:interns/Views/Back_Icon_Container.dart';
+import 'package:interns/Views/Button.dart';
 import 'package:interns/Views/Style.dart';
+import 'package:interns/Views/container_with-image.dart';
+import 'package:interns/Views/container_with_icon.dart';
 
 import 'complete_job_detail.dart';
 
@@ -30,7 +34,6 @@ class _CompensationState extends State<Compensation> {
   String? dropdownvalue;
   String? dropdownvalue1;
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,142 +47,35 @@ class _CompensationState extends State<Compensation> {
                   top: 40,
                   left: 13,
                 ),
-                child: Container(
-                  width: double.infinity,
-                  height: 300.0,
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    image: DecorationImage(
-                      image: AssetImage(
-                        "assets/images/img1.png",
-                      ),
-                      fit: BoxFit.cover,
-                    ),
-                    borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(12),
-                        bottomLeft: Radius.circular(15),
-                        topLeft: Radius.circular(15),
-                        bottomRight: Radius.circular(15)),
-                  ),
+                child: Containar(
+                  image: "assets/images/img1.png",
+                  TopRightCirculer: 12,
+                  TopLeftCirculer: 15,
+                  BottomRightCirculer: 15,
+                  BottomLeftCirculer: 15,
                 ),
               ),
-               Padding(
+              Padding(
                 padding: const EdgeInsets.only(
                   top: 65,
                   left: 25,
                 ),
-                child: Text(
-                  "Add compensation",
-                  style: AppTextStyle.ForLargeText,
-                  maxLines: 3,
-                  overflow: TextOverflow.ellipsis,
-                  textAlign: TextAlign.justify,
+                child: TextForContainer(
+                  text: "Add compensation",
                 ),
               )
             ]),
             Padding(
-              padding: const EdgeInsets.only(
-                top: 20,
-                left: 13,
-              ),
-              child: Container(
-                width: double.infinity,
-                height: 310.0,
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(18),
-                  ),
+                padding: const EdgeInsets.only(
+                  top: 20,
+                  left: 13,
                 ),
-                child: Column(
-                  children: [
-                     Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 17, top: 20),
-                        child: Text(
-                          "About this job",
-                          style: AppTextStyle.ForLargeText,
-                          maxLines: 3,
-                          overflow: TextOverflow.ellipsis,
-                          textAlign: TextAlign.justify,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 16, top: 14),
-                      child: Row(
-                        children: [
-                          Text(
-                            "We use this information to find the best\ncandidates for this job.",
-                            style:AppTextStyle.LessOpacitytext,)
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 16, top: 12),
-                      child: Row(
-                        children: [
-                          const Icon(Icons.business_center),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 12),
-                            child: Text(
-                              "Software Developer",
-                              style: AppTextStyle.LessOpacitytext,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 12, left: 16),
-                      child: Row(
-                        children: [
-                          const Icon(Icons.location_on_rounded),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 12),
-                            child: Text(
-                              "Lahore",
-                              style: AppTextStyle.LessOpacitytext,
-
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 15, top: 30),
-                        child: Text(
-                          "Advertising location",
-                          style: AppTextStyle.nameOfTextStyle
-                        ),
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 15, top: 15),
-                        child: Container(
-                            height: 40,
-                            width: 80,
-                            decoration: BoxDecoration(
-                                color: Colors.grey.shade200,
-                                borderRadius: BorderRadius.circular(5)),
-                            child:  Padding(
-                              padding: const EdgeInsets.only(left: 12, top: 8),
-                              child: Text(
-                                "Lahore",
-                                style: AppTextStyle.LessOpacitytext,
-                              ),
-                            )),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+                child: Container2(
+                  TopLeftCirculer: 20,
+                  TopRightCirculer: 20,
+                  BottomLeftCirculer: 20,
+                  BottomRightCirculer: 20,
+                )),
             Padding(
               padding: const EdgeInsets.only(top: 18),
               child: Container(
@@ -213,27 +109,22 @@ class _CompensationState extends State<Compensation> {
                             decoration: const BoxDecoration(
                               color: appcolors.greenishText,
                               borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(19) ,
+                                topRight: Radius.circular(19),
                                 topLeft: Radius.circular(19),
-
                               ),
                             ),
                           ),
                         ),
                         Column(children: [
                           Row(
-                            children:  const [
+                            children: const [
                               Padding(
                                 padding: EdgeInsets.only(top: 22, left: 18),
                                 child: Text(
                                   "Compensation is key",
-                                  // style: TextStyle(
-                                  //   color: Colors.grey,
-                                  //   fontSize: 15,
-                                  // ),
-
+                                  style: TextStyle(
+                                      fontSize: 18, color: Colors.white,fontWeight: FontWeight.bold),
                                 ),
-
                               ),
                             ],
                           ),
@@ -244,8 +135,7 @@ class _CompensationState extends State<Compensation> {
                                 Text(
                                   "Salary is key to helping jobseekers find the\nright fit.",
                                   style: TextStyle(
-                                      fontSize: 17,
-                                      color: Colors.white),
+                                      fontSize: 16, color: Colors.white),
                                 )
                               ],
                             ),
@@ -261,7 +151,7 @@ class _CompensationState extends State<Compensation> {
                         ]),
                       ],
                     ),
-                     Padding(
+                    Padding(
                       padding: const EdgeInsets.only(left: 17),
                       child: Align(
                           alignment: Alignment.centerLeft,
@@ -270,21 +160,25 @@ class _CompensationState extends State<Compensation> {
                             style: AppTextStyle.nameOfTextStyle,
                           )),
                     ),
-                     Padding(
-                      padding: const EdgeInsets.only(left:17,top: 10),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 17, top: 10),
                       child: Align(
-                        alignment: Alignment.centerLeft,
-                          child: Text("Show pay by",style: AppTextStyle.SmallText,)),
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            "Show pay by",
+                            style: AppTextStyle.SmallText,
+                          )),
                     ),
                     Padding(
                         padding:
-                        const EdgeInsets.only(left: 15, top: 7, right: 15),
+                            const EdgeInsets.only(left: 15, top: 7, right: 15),
                         child: Container(
                           height: 60,
                           width: double.infinity,
                           decoration: BoxDecoration(
                               border: Border.all(
-                                  color: appcolors.greenishText.withOpacity(0.4),
+                                  color:
+                                      appcolors.greenishText.withOpacity(0.4),
                                   width: 1.5),
                               borderRadius: BorderRadius.circular(10)),
                           child: Padding(
@@ -296,27 +190,25 @@ class _CompensationState extends State<Compensation> {
                                   "Range",
                                   style: TextStyle(fontSize: 18),
                                 ),
-                                Align(
-                                  //  alignment: Align,
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(right: 8.0),
-                                    child: DropdownButtonHideUnderline(
-                                      child: DropdownButton<String>(
-                                          value: dropdownvalue,
-                                          onChanged: (value) {
-                                            setState(() {
-                                              dropdownvalue = value;
-                                            });
-                                          },
-                                          items: items.map((valueitem) {
-                                            return DropdownMenuItem(
-                                                value: valueitem,
-                                                child: Text(valueitem));
-                                          }).toList(),
-                                          icon: const Icon(
-                                            Icons.expand_more,color: appcolors.greenishText,
-                                          )),
-                                    ),
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 8.0),
+                                  child: DropdownButtonHideUnderline(
+                                    child: DropdownButton<String>(
+                                        value: dropdownvalue,
+                                        onChanged: (value) {
+                                          setState(() {
+                                            dropdownvalue = value;
+                                          });
+                                        },
+                                        items: items.map((valueitem) {
+                                          return DropdownMenuItem(
+                                              value: valueitem,
+                                              child: Text(valueitem));
+                                        }).toList(),
+                                        icon: const Icon(
+                                          Icons.expand_more,
+                                          color: appcolors.greenishText,
+                                        )),
                                   ),
                                 ),
                               ],
@@ -324,63 +216,72 @@ class _CompensationState extends State<Compensation> {
                           ),
                         )),
                     Padding(
-                      padding: const EdgeInsets.only(left:17,top: 10),
+                      padding: const EdgeInsets.only(left: 17, top: 10),
                       child: Align(
                           alignment: Alignment.centerLeft,
-                          child: Text("Minimun",style: AppTextStyle.LessOpacitytext,)),
+                          child: Text(
+                            "Minimun",
+                            style: AppTextStyle.LessOpacitytext,
+                          )),
                     ),
                     Padding(
                         padding:
-                        const EdgeInsets.only(left: 15, top: 7, right: 15),
+                            const EdgeInsets.only(left: 15, top: 7, right: 15),
                         child: Container(
                           height: 60,
                           width: double.infinity,
                           decoration: BoxDecoration(
                               border: Border.all(
-                                  color: appcolors.greenishText.withOpacity(0.4),
+                                  color:
+                                      appcolors.greenishText.withOpacity(0.4),
                                   width: 1.5),
                               borderRadius: BorderRadius.circular(10)),
                           child: Padding(
                             padding: const EdgeInsets.only(left: 8.0),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children:  [
-                                Text(
-                                  "PKR 300000",
-                                  style:AppTextStyle.SmallText
-                                ),
+                              children: [
+                                Text("PKR 300000",
+                                    style: AppTextStyle.SmallText),
                               ],
                             ),
                           ),
                         )),
                     Padding(
-                      padding: const EdgeInsets.only(left:17,top: 10),
+                      padding: const EdgeInsets.only(left: 17, top: 10),
                       child: Align(
                           alignment: Alignment.centerLeft,
-                          child: Text("to",style: AppTextStyle.LessOpacitytext,)),
+                          child: Text(
+                            "to",
+                            style: AppTextStyle.LessOpacitytext,
+                          )),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left:17,top: 10),
+                      padding: const EdgeInsets.only(left: 17, top: 10),
                       child: Align(
                           alignment: Alignment.centerLeft,
-                          child: Text("Maximum",style: AppTextStyle.LessOpacitytext,)),
+                          child: Text(
+                            "Maximum",
+                            style: AppTextStyle.LessOpacitytext,
+                          )),
                     ),
                     Padding(
                         padding:
-                        const EdgeInsets.only(left: 15, top: 7, right: 15),
+                            const EdgeInsets.only(left: 15, top: 7, right: 15),
                         child: Container(
                           height: 60,
                           width: double.infinity,
                           decoration: BoxDecoration(
                               border: Border.all(
-                                  color: appcolors.greenishText.withOpacity(0.4),
+                                  color:
+                                      appcolors.greenishText.withOpacity(0.4),
                                   width: 1.5),
                               borderRadius: BorderRadius.circular(10)),
                           child: Padding(
                             padding: const EdgeInsets.only(left: 8.0),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children:  [
+                              children: [
                                 Text(
                                   "PKR 500000",
                                   style: AppTextStyle.SmallText,
@@ -390,20 +291,24 @@ class _CompensationState extends State<Compensation> {
                           ),
                         )),
                     Padding(
-                      padding: const EdgeInsets.only(left:17,top: 10),
+                      padding: const EdgeInsets.only(left: 17, top: 10),
                       child: Align(
                           alignment: Alignment.centerLeft,
-                          child: Text("Rate",style: AppTextStyle.SmallText,)),
+                          child: Text(
+                            "Rate",
+                            style: AppTextStyle.SmallText,
+                          )),
                     ),
                     Padding(
                         padding:
-                        const EdgeInsets.only(left: 15, top: 7, right: 15),
+                            const EdgeInsets.only(left: 15, top: 7, right: 15),
                         child: Container(
                           height: 60,
                           width: double.infinity,
                           decoration: BoxDecoration(
                               border: Border.all(
-                                  color: appcolors.greenishText.withOpacity(0.4),
+                                  color:
+                                      appcolors.greenishText.withOpacity(0.4),
                                   width: 1.5),
                               borderRadius: BorderRadius.circular(10)),
                           child: Padding(
@@ -412,9 +317,8 @@ class _CompensationState extends State<Compensation> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  "per month",
+                                  "Per month",
                                   style: AppTextStyle.SmallText,
-
                                 ),
                                 Align(
                                   //  alignment: Align,
@@ -422,11 +326,10 @@ class _CompensationState extends State<Compensation> {
                                     padding: const EdgeInsets.only(right: 8.0),
                                     child: DropdownButtonHideUnderline(
                                       child: DropdownButton<String>(
-
-                                          value: dropdownvalue,
+                                          value: dropdownvalue1,
                                           onChanged: (value) {
                                             setState(() {
-                                              dropdownvalue = value;
+                                              dropdownvalue1 = value;
                                             });
                                           },
                                           items: items.map((valueitem) {
@@ -435,7 +338,8 @@ class _CompensationState extends State<Compensation> {
                                                 child: Text(valueitem));
                                           }).toList(),
                                           icon: const Icon(
-                                            Icons.expand_more,color: appcolors.greenishText,
+                                            Icons.expand_more,
+                                            color: appcolors.greenishText,
                                           )),
                                     ),
                                   ),
@@ -443,7 +347,8 @@ class _CompensationState extends State<Compensation> {
                               ],
                             ),
                           ),
-                        )),
+                        )
+                    ),
                   ],
                 ),
               ),
@@ -472,68 +377,29 @@ class _CompensationState extends State<Compensation> {
                             left: 15,
                             right: 15,
                           ),
-                          child: ElevatedButton(
-                            onPressed: () {
+                          child: Elevatedbutton(
+                            'Save and continue',
+                            () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => const CompleteJobDetail()),
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const CompleteJobDetail()),
                               );
                             },
-                            child: const Text(
-                              'Save and continue',
-                              style: TextStyle(
-                                  fontSize: 18, fontWeight: FontWeight.bold),
-                            ),
-                            style: ElevatedButton.styleFrom(
-                              primary: appcolors.greenishText,
-                              fixedSize: const Size(300, 300),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10)),
-                            ),
                           ),
                         ),
                       ),
                     ),
-                    Padding(
-                      padding:
-                      const EdgeInsets.only(top: 10, left: 15, right: 15),
-                      child: Container(
-                        height: 50,
-                        width: 330,
-                        //double.infinity,
-                        decoration: BoxDecoration(
-                          // color: Colors.black,
-                            border: Border.all(
-                                color: Colors.black.withOpacity(0.1)),
-                            borderRadius: BorderRadius.circular(10)),
-                        child: Column(children: [
-                          Padding(
-                            padding: const EdgeInsets.only(top: 15),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: const [
-                                Icon(
-                                  Icons.arrow_back_ios,
-                                  color: appcolors.greenishText,
-                                  size: 15,
-                                ),
-                                Text(
-                                  "Back",
-                                  style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                      color: appcolors.greenishText),
-                                )
-                              ],
-                            ),
-                          ),
-                        ]),
-                      ),
+                    const Padding(
+                      padding: EdgeInsets.only(top: 10, left: 15, right: 15),
+                      child: Back(),
                     ),
                   ],
                 ),
               ),
-            ),  ],
+            ),
+          ],
         ),
       ),
     );

@@ -13,6 +13,7 @@ class _signInViewState extends State<signInView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Column(
         children: [
           const SizedBox(
@@ -22,21 +23,27 @@ class _signInViewState extends State<signInView> {
             padding: const EdgeInsets.all(8.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children:[
-                const Icon(
-                  Icons.arrow_back,
-                  size: 30,
-                ),
+              children: [
+                IconButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    icon: const Icon(
+                      Icons.arrow_back,
+                      size: 30,
+                      color: appcolors.greenishText,
+                    )),
                 GestureDetector(
                   child: const Text(
                     "Sign up",
-                    style: TextStyle(
-                      fontSize: 18,
-                      color: appcolors.lightPrimarycolor,
-                    ),
+                    style:
+                        TextStyle(fontSize: 18, color: appcolors.greenishText),
                   ),
-                  onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>const signUpView()));
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const signUpView()));
                   },
                 ),
               ],
@@ -90,7 +97,7 @@ class _signInViewState extends State<signInView> {
               child: Text(
                 "Forgot Password?",
                 style: TextStyle(
-                  color: Colors.blueAccent,
+                  color: appcolors.greenishText,
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
                 ),
@@ -110,9 +117,11 @@ class _signInViewState extends State<signInView> {
                 ),
               ),
               style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all(appcolors.greenishText),
                   shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30),
-              ))),
+                    borderRadius: BorderRadius.circular(30),
+                  ))),
             ),
           ),
           const Padding(
